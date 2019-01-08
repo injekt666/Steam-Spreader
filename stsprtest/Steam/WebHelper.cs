@@ -61,7 +61,7 @@ namespace stsprtest.Steam
 
                         if (windowText.ToString() != "Friends List")
                         {
-                            ChatWindow window = ChatWindow.FromHandle(hwnd);
+                            ChatWindow window = ChatWindow.FromHandle(hwnd, windowText.ToString());
                             ChatWindows.Add(window);
 
                             Console.WriteLine("Detected chat window: " + windowText.ToString());

@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using static stsprtest.NativeMethods;
 
 namespace stsprtest
@@ -16,14 +11,20 @@ namespace stsprtest
             protected set { m_WindowHandle = value; }
         }
 
+        public string DisplayName
+        {
+            get { return m_DisplayName; }
+            protected set { m_DisplayName = value; }
+        }
+
         public void Open()
         {
             SetForegroundWindow(WindowHandle);
         }
 
-        public static ChatWindow FromHandle(IntPtr handle)
+        public static ChatWindow FromHandle(IntPtr handle, string displayName)
         {
-            return new ChatWindow() { WindowHandle = handle };
+            return new ChatWindow() { WindowHandle = handle, DisplayName = displayName };
         }
 
         ~ChatWindow()
@@ -32,5 +33,6 @@ namespace stsprtest
         }
 
         private IntPtr m_WindowHandle;
+        private string m_DisplayName;
     }
 }
