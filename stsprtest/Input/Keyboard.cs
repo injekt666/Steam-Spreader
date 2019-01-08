@@ -18,6 +18,12 @@ namespace stsprtest.Input
                 input.dwFlags = KeyEventFlags.KEYEVENTF_KEYUP;
             InjectKeyboardInput(ref input, 1);
         }
+
+        public static void InjectKeyPress(ScanCode code)
+        {
+            InjectKey(false, code);
+            InjectKey(true, code);
+        }
     }
     [Flags]
     public enum KeyEventFlags : uint

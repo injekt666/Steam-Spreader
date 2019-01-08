@@ -1,6 +1,7 @@
 ﻿using stsprtest.Input;
 using stsprtest.Steam;
 using System;
+using System.Threading;
 
 namespace stsprtest
 {
@@ -16,24 +17,22 @@ namespace stsprtest
             foreach (ChatWindow chatWindow in webHelper.ChatWindows)
             {
                 chatWindow.Open();
+                Thread.Sleep(30);
 
-                Keyboard.InjectKey(false, ScanCode.KEY_H);
-                Keyboard.InjectKey(true, ScanCode.KEY_H);
+                Keyboard.InjectKeyPress(ScanCode.KEY_H);
+                Thread.Sleep(10);
 
-                Keyboard.InjectKey(false, ScanCode.KEY_E);
-                Keyboard.InjectKey(true, ScanCode.KEY_E);
+                Keyboard.InjectKeyPress(ScanCode.KEY_E);
+                Thread.Sleep(10);
 
-                Keyboard.InjectKey(false, ScanCode.KEY_L);
-                Keyboard.InjectKey(true, ScanCode.KEY_L);
+                Keyboard.InjectKeyPress(ScanCode.KEY_L);
+                Thread.Sleep(10);
 
-                Keyboard.InjectKey(false, ScanCode.KEY_L);
-                Keyboard.InjectKey(true, ScanCode.KEY_L);
-                
-                Keyboard.InjectKey(false, ScanCode.KEY_O);
-                Keyboard.InjectKey(true, ScanCode.KEY_O);
+                Keyboard.InjectKeyPress(ScanCode.KEY_L);
+                Thread.Sleep(10);
 
-                //Keyboard.InjectKey(false, ScanCode.RETURN );
-                //Keyboard.InjectKey(true, ScanCode.RETURN);
+                Keyboard.InjectKeyPress(ScanCode.KEY_O);
+                Thread.Sleep(10);
             }
 
             Console.ReadLine();
