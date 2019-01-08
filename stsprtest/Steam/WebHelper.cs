@@ -8,11 +8,6 @@ namespace stsprtest.Steam
 {
     public class WebHelper
     {
-        public bool Open
-        {
-            get { return ChatWindows.Count > 0; }
-        }
-
         public List<int> ProcessThreads
         {
             get { return m_ProcessesThreads; }
