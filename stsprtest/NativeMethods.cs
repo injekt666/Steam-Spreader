@@ -24,8 +24,11 @@ namespace stsprtest
         [DllImport("user32.dll")]
         public static extern int GetClassName(IntPtr hwnd, StringBuilder lpClassName, int nMaxCount);
 
-        [DllImport("User32.dll")]
+        [DllImport("user32.dll")]
         public static extern int GetWindowText(IntPtr hwnd, StringBuilder lpString, int nMaxCount);
+
+        [DllImport("kernel32.dll")]
+        public static extern bool CloseHandle(IntPtr handle);
 
         public delegate bool EnumThreadWindowsCallback(IntPtr hWnd, IntPtr lParam);
     }

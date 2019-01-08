@@ -26,6 +26,11 @@ namespace stsprtest
             return new ChatWindow() { WindowHandle = handle };
         }
 
+        ~ChatWindow()
+        {
+            CloseHandle(WindowHandle);
+        }
+
         private IntPtr m_WindowHandle;
     }
 }
