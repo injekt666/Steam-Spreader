@@ -4,14 +4,12 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using static stsprtest.NativeMethods;
 
 namespace stsprtest
 {
     public class ChatWindow
     {
-        [DllImport("user32.dll")]
-        private static extern bool SetForegroundWindow(IntPtr whandle);
-
         public IntPtr WindowHandle
         {
             get { return m_WindowHandle; }
